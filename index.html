@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Quote Generator</title>
+</head>
+<body style="font-family: Arial, sans-serif; text-align: center; padding-top: 50px; background-color: #f4f4f4;">
+
+  <h1>💡 Random Quote Generator</h1>
+  <div id="quote-box" style="margin: 30px auto; padding: 20px; width: 80%; max-width: 500px; background: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+    <p id="quote" style="font-size: 1.5em; margin-bottom: 10px;">Loading quote...</p>
+    <p id="author" style="color: #555;">—</p>
+    <button onclick="generateQuote()" style="margin-top: 20px; padding: 10px 20px; font-size: 1em; border: none; background: #007bff; color: white; border-radius: 5px; cursor: pointer;">New Quote</button>
+  </div>
+
+  <script>
+    const quotes = [
+      { text: "Code is like humor. When you have to explain it, it’s bad.", author: "Cory House" },
+      { text: "Programs must be written for people to read, and only incidentally for machines to execute.", author: "Harold Abelson" },
+      { text: "Talk is cheap. Show me the code.", author: "Linus Torvalds" },
+      { text: "First, solve the problem. Then, write the code.", author: "John Johnson" },
+      { text: "Experience is the name everyone gives to their mistakes.", author: "Oscar Wilde" },
+      { text: "Java is to JavaScript what car is to Carpet.", author: "Chris Heilmann" },
+      { text: "In order to be irreplaceable, one must always be different.", author: "Coco Chanel" },
+      { text: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand.", author: "Martin Fowler" }
+    ];
+
+    function generateQuote() {
+      const random = quotes[Math.floor(Math.random() * quotes.length)];
+      document.getElementById("quote").innerText = random.text;
+      document.getElementById("author").innerText = "— " + random.author;
+    }
+
+    // Generate one on page load
+    generateQuote();
+  </script>
+
+</body>
+</html>
